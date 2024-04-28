@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>@yield('pagetitle', 'Trenilania')</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
-</head>
-
-<body>
-
-    <h1>Hello World!</h1>
-
-
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+@section('content')
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugit necessitatibus esse reiciendis dolor. Rerum nam
+        illum dicta reprehenderit consectetur esse consequatur rem repellat laborum velit odit quod ut iste deserunt eius
+        sapiente sit eos fugiat, totam sunt expedita sequi ab alias quae. Tempore consequuntur nam quo deserunt ratione
+        laboriosam corrupti officia placeat esse. Ab praesentium voluptas incidunt explicabo officia rerum placeat sint,
+        quas autem similique totam quis itaque ex beatae, architecto sit laudantium unde deleniti debitis! Neque mollitia,
+        animi tempore optio inventore harum modi beatae aliquam iure praesentium dicta doloribus eius iste dignissimos
+        fugiat veritatis laboriosam adipisci rerum, fuga quia autem dolorem ad esse reprehenderit. Id itaque quibusdam
+        libero aliquid ad? Nisi, animi fugiat explicabo corporis similique cumque vel repellendus, ullam corrupti placeat
+        veritatis quidem? Qui, non suscipit. Quis quae dolore vero iure magni, ullam recusandae cum delectus. Dolores
+        voluptates error reprehenderit quis sequi illum, similique rerum inventore. Ratione, facilis quisquam assumenda
+        voluptates velit omnis dignissimos iure ad soluta animi deserunt labore aspernatur maxime inventore expedita porro
+        eius! Quae eveniet quam assumenda? Similique molestias numquam, quos unde cupiditate deleniti minima modi laudantium
+        recusandae! Dolores officiis maiores molestiae officia accusamus deleniti quis cupiditate ipsa rerum eum nihil
+        ratione fugiat incidunt, dolor autem, temporibus ducimus aspernatur consequuntur minus? Praesentium amet ex quam
+        repudiandae odit molestiae itaque commodi aliquam eligendi quis quo quidem dicta veniam fuga laudantium voluptate,
+        quaerat ad tempora! Dolores dignissimos eaque quisquam illum quidem voluptatum minima omnis dolorem distinctio
+        facere deleniti earum nesciunt modi, aut asperiores, iure ipsum officia consectetur suscipit molestias. Tempora est
+        beatae ea atque eveniet. Eligendi voluptates eos sequi nemo tempore impedit quos cupiditate amet? Provident
+        incidunt, quasi quibusdam perspiciatis odio explicabo. Natus, laudantium doloremque eligendi magni laboriosam nobis
+        accusamus quod pariatur iusto temporibus perspiciatis maxime omnis! Et, delectus doloremque modi adipisci qui natus
+        hic sequi.
+    </p>
+@endsection
