@@ -1,27 +1,111 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugit necessitatibus esse reiciendis dolor. Rerum nam
-        illum dicta reprehenderit consectetur esse consequatur rem repellat laborum velit odit quod ut iste deserunt eius
-        sapiente sit eos fugiat, totam sunt expedita sequi ab alias quae. Tempore consequuntur nam quo deserunt ratione
-        laboriosam corrupti officia placeat esse. Ab praesentium voluptas incidunt explicabo officia rerum placeat sint,
-        quas autem similique totam quis itaque ex beatae, architecto sit laudantium unde deleniti debitis! Neque mollitia,
-        animi tempore optio inventore harum modi beatae aliquam iure praesentium dicta doloribus eius iste dignissimos
-        fugiat veritatis laboriosam adipisci rerum, fuga quia autem dolorem ad esse reprehenderit. Id itaque quibusdam
-        libero aliquid ad? Nisi, animi fugiat explicabo corporis similique cumque vel repellendus, ullam corrupti placeat
-        veritatis quidem? Qui, non suscipit. Quis quae dolore vero iure magni, ullam recusandae cum delectus. Dolores
-        voluptates error reprehenderit quis sequi illum, similique rerum inventore. Ratione, facilis quisquam assumenda
-        voluptates velit omnis dignissimos iure ad soluta animi deserunt labore aspernatur maxime inventore expedita porro
-        eius! Quae eveniet quam assumenda? Similique molestias numquam, quos unde cupiditate deleniti minima modi laudantium
-        recusandae! Dolores officiis maiores molestiae officia accusamus deleniti quis cupiditate ipsa rerum eum nihil
-        ratione fugiat incidunt, dolor autem, temporibus ducimus aspernatur consequuntur minus? Praesentium amet ex quam
-        repudiandae odit molestiae itaque commodi aliquam eligendi quis quo quidem dicta veniam fuga laudantium voluptate,
-        quaerat ad tempora! Dolores dignissimos eaque quisquam illum quidem voluptatum minima omnis dolorem distinctio
-        facere deleniti earum nesciunt modi, aut asperiores, iure ipsum officia consectetur suscipit molestias. Tempora est
-        beatae ea atque eveniet. Eligendi voluptates eos sequi nemo tempore impedit quos cupiditate amet? Provident
-        incidunt, quasi quibusdam perspiciatis odio explicabo. Natus, laudantium doloremque eligendi magni laboriosam nobis
-        accusamus quod pariatur iusto temporibus perspiciatis maxime omnis! Et, delectus doloremque modi adipisci qui natus
-        hic sequi.
-    </p>
+    <div class="container-fluid px-4">
+        <div class="row">
+            {{-- itero per recuperare i dati della tabella trains --}}
+            @foreach ($trains as $train)
+                <div class="col-12 col-xxl-6 p-2">
+                    <div class="card h-100">
+                        {{-- stampo dei dati in pagina aggiungendo una classe con il ternario --}}
+                        <div
+                            class="bg-secondary p-3 {{ $train->company === 'Italo' ? 'text-danger bg-secondary bg-opacity-25' : 'bg-success text-light' }}">
+                            <h5> {{ $train->company }} </h5>
+                        </div>
+                        <div class="p-3 text-center">
+                            <div class="row">
+                                <div class="col">
+                                    <span>DATA DEL VIAGGIO:</span>
+                                    <h6>{{ $train->travel_date }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>TIPOLOGIA TRENO:</span>
+                                    <h6>{{ $train->train_type }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>IDENTIFICATIVO TRENO:</span>
+                                    <h6>{{ $train->train_code }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>NUMERO CARROZZE:</span>
+                                    <h6>{{ $train->number_of_carriages }}</h6>
+                                </div>
+                            </div>
+                            {{-- /.row data del viaggio e info sul treno --}}
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <span>STAZIONE DI PARTENZA:</span>
+                                    <h6>{{ $train->departure_station }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>STAZIONE DI ARRIVO:</span>
+                                    <h6>{{ $train->arrival_station }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>ORA DI PARTENZA:</span>
+                                    @if ($train->departure_time == null)
+                                        <h6 class="text-danger">NON DISPONIBILE</h6>
+                                    @endif
+                                    <h6>{{ $train->departure_time }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>ORA DI ARRIVO:</span>
+                                    @if ($train->arrival_time == null)
+                                        <h6 class="text-danger">NON DISPONIBILE</h6>
+                                    @endif
+                                    <h6>{{ $train->arrival_time }}</h6>
+                                </div>
+                            </div>
+                            {{-- /row arrivo-partenza stazione e orari --}}
+                            <hr>
+
+                            <div class="row">
+                                <div class="col">
+                                    <span>PREZZO BIGLIETTO INTERO:</span>
+                                    <h6>{{ $train->ticket_price }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>PREZZO BIGLIETTO RIDOTTO:</span>
+                                    <h6>{{ $train->reduced_ticket_price }}</h6>
+                                </div>
+                                <div class="col">
+                                    <span>BIGLIETTI DISPONIBILI:</span>
+                                    <h6>{{ $train->available_seats }}</h6>
+                                </div>
+                                <div class="col">
+                                    <div>
+                                        <span>PUNTUALE:</span>
+                                        @if ($train->on_time)
+                                            <strong class="text-success">SI</strong>
+                                        @else
+                                            <strong class="text-danger">IN RITARDO</strong>
+                                        @endif
+
+                                    </div>
+                                    <div>
+                                        <span>ANNULLATO:</span>
+                                        @if ($train->cancelled)
+                                            <strong class="text-danger">SI</strong>
+                                        @else
+                                            <strong>NO</strong>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- /.row info sui biglietti e informazioni sullo stato del viaggio --}}
+                            <hr>
+                        </div>
+                        <div class="text-center p-2">
+                            <h6>INFO:</h6>
+                            <span>
+                                {{ $train->additional_information }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
 @endsection
