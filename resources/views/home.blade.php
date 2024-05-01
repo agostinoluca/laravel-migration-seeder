@@ -96,9 +96,9 @@
                             {{-- /.row info sui biglietti e informazioni sullo stato del viaggio --}}
                             <hr>
                         </div>
-                        <div class="text-center p-2">
-                            <h6>INFO:</h6>
-                            <span>
+                        <div class="p-2 text-center">
+                            <h6>ULTERIORI INFORMAZIONI:</h6>
+                            <span class="text-muted lead">
                                 {{ $train->additional_information }}
                             </span>
                         </div>
