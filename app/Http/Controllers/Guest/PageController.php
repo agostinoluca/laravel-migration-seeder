@@ -16,4 +16,11 @@ class PageController extends Controller
 
         return view('home', compact('trains'));
     }
+
+    public function filter()
+    {
+        $trainsToday = 'I treni di oggi';
+
+        return view('departure_of_today', compact('trainsToday'));
+    }
 }
