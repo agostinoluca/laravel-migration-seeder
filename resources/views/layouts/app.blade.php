@@ -24,7 +24,7 @@
 
     @include('partials.header')
 
-    <main>
+    <main style="min-height: 100vh;">
         @yield('content')
     </main>
 
