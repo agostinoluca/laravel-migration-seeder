@@ -19,7 +19,7 @@ class PageController extends Controller
 
     public function filter()
     {
-        $trainsToday = 'I treni di oggi';
+        $trainsToday = Train::whereDate('travel_date', now()->toDateString())->get();
 
         return view('departure_of_today', compact('trainsToday'));
     }

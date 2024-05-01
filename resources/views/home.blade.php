@@ -5,7 +5,7 @@
         <div class="row">
             {{-- itero per recuperare i dati della tabella trains --}}
             @foreach ($trains as $train)
-                <div class="col-12 col-xxl-6 p-2">
+                <div class="col-12 col-xxl-6 p-2 mx-auto">
                     <div class="card h-100">
                         {{-- stampo dei dati in pagina aggiungendo una classe con il ternario --}}
                         <div
